@@ -12,12 +12,12 @@ void clearScreen(){
 void setupGrid(Tile grid[SIZE_Y][SIZE_X]){
     bool wallArr[8][8] = {
         {0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 1, 0, 0},
-        {0, 0, 0, 0, 0, 1, 0, 0},
-        {0, 0, 0, 0, 0, 1, 0, 0},
-        {0, 0, 0, 0, 0, 1, 0, 0},
-        {0, 0, 0, 0, 1, 1, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 1, 0, 0, 0},
+        {0, 0, 0, 0, 1, 0, 0, 0},
+        {0, 0, 0, 0, 1, 1, 1, 0},
+        {0, 0, 0, 0, 1, 0, 0, 0},
+        {0, 0, 1, 1, 1, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0}
     };
     for(int i = 0; i < SIZE_Y; i++){
@@ -95,6 +95,15 @@ coords minElement(std::vector<coords> vec, Tile grid[SIZE_Y][SIZE_X]){
         if(grid[vec[i].y][vec[i].x].fCost < lowestF){
             lowestF = grid[vec[i].y][vec[i].x].fCost;
             lowestCoords = vec[i];
+        }
+    }
+    int lowestH = 2000;
+    for(int i = 0; i < vec.size(); i++){
+        if(grid[vec[i].y][vec[i].x].fCost == lowestF){
+            if(grid[vec[i].y][vec[i].x].hCost < lowestH){
+                lowestH = grid[vec[i].y][vec[i].x].hCost;
+                lowestCoords = vec[i];
+            }
         }
     }
     return lowestCoords;

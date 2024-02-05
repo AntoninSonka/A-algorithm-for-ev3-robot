@@ -17,10 +17,10 @@ enum {
     SIZE_Y = 8,
     SIZE_X = 8,
     START_Y = 2,
-    START_X = 4,
-    FINISH_Y = 4,
+    START_X = 2,
+    FINISH_Y = 6,
     FINISH_X = 6,
-    TIME = 100
+    TIME = 250
 };
 
 struct coords{
