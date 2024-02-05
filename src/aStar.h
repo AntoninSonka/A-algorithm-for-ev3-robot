@@ -36,6 +36,11 @@ public:
     int hCost = 0; //heuristic cost - the distance from current tile to the finish
     int gCost = 0; //the distance from current tile to the start through visited tiles
     int fCost = 1000;
+    /*
+     * bool descovered
+     * descovered is true if position is in closed or in opend
+     * moving sequence is creating an virtual grid where non descovered tiles are walls. with that bot will move effectively and correctly
+    */
 };
 
 void clearScreen();
