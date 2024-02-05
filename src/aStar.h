@@ -48,7 +48,7 @@ int calculateHCost(coords position);
 
 int calculateGCost(Tile grid[SIZE_Y][SIZE_X], coords position);
 
-coords minElement(std::vector<coords> vec, Tile grid[SIZE_Y][SIZE_X]);
+coords minElement(std::vector<coords> vec, Tile grid[SIZE_Y][SIZE_X]); //returns best new coords of a tile to descover based on lowest f cost and after on lowest h cost
 
 int indexByCoords(std::vector<coords> vec, coords position);
 
