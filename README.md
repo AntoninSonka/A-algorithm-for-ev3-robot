@@ -26,9 +26,11 @@ If we will think of any other solution, we will probably adapt code and other th
 
 Potentional problem could be calibration of the robot, because right now we didn't folus in it at all.
 
-### **It may be not possible to use ev3dev on EV3, that we have in school**
+## Updates
 
-Schools are often really strict on which software you can run where and ev3dev could fall into this category.
-But because of the open-source and portable nature of the project it could be possible to allow this project, from my perspectivity.
+### **Simulation of the robot moving from one place to another**
+
+The program now behaves like a robot. For it to descover tile, it must first get there. It does by using A* algorithm, like before.
+Now we really only have to add the raw movement of the robot and everything is set.
 
 *Authors: Antonín Šonka, Oliver Špaček*
