@@ -2,6 +2,9 @@
 
 #include <vector>
 #include <iostream>
+#include <algorithm>
+#include <chrono>
+#include <thread>
 
 
 #ifdef _WIN32
@@ -49,14 +52,18 @@ void setupGrid(Tile grid[SIZE_Y][SIZE_X]);
 
 void printGrid(Tile grid[SIZE_Y][SIZE_X], coords position);
 
-int calculateHCost(coords position);
+int calculateHCost(coords position, coords finish);
 
-int calculateGCost(Tile grid[SIZE_Y][SIZE_X], coords position);
+int calculateGCost(Tile grid[SIZE_Y][SIZE_X], coords position, coords start);
 
 coords minElement(std::vector<coords> vec, Tile grid[SIZE_Y][SIZE_X]); //returns best new coords of a tile to descover based on lowest f cost and after on lowest h cost
 
 int indexByCoords(std::vector<coords> vec, coords position);
 
-bool compareGCosts(coords position, Tile grid[SIZE_Y][SIZE_X], coords newParents);
+bool compareGCosts(coords position, Tile grid[SIZE_Y][SIZE_X], coords newParents, coords start);
 
-void descoverTile(coords current, coords neighbour, Tile grid[SIZE_Y][SIZE_X], std::vector<coords>& openVec, std::vector<coords> closedVec);
+void descoverTile(coords current, coords neighbour, Tile grid[SIZE_Y][SIZE_X], std::vector<coords>& openVec, std::vector<coords> closedVec, coords start, coords finish);
+
+void findPath(Tile grid[SIZE_Y][SIZE_X], coords start, coords finish, bool skipRide);
+
+void rideToNewTile(std::vector<coords>& openVec, std::vector<coords>& closedVec, coords newStart, coords newFinish);
