@@ -194,7 +194,7 @@ void findPath(Tile grid[SIZE_Y][SIZE_X], coords start, coords finish, bool skipR
         if(!skipRide){
             printGrid(blankGrid, current);
             std::cout << "\nF cost: " << grid[current.y][current.x].fCost << "\n";
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
 
         openVec.erase(openVec.begin() + indexByCoords(openVec, current));
@@ -254,7 +254,7 @@ void findPath(Tile grid[SIZE_Y][SIZE_X], coords start, coords finish, bool skipR
     }
     std::cout << "\nF cost: " << grid[current.y][current.x].fCost << "\n";
     std::cout << "success\n";
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     clearScreen();
 }
 
