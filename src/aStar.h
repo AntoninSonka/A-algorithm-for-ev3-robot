@@ -57,6 +57,7 @@ int calculateHCost(coords position, coords finish);
 int calculateGCost(Tile grid[SIZE_Y][SIZE_X], coords position, coords start);
 
 coords minElement(std::vector<coords> vec, Tile grid[SIZE_Y][SIZE_X]); //returns best new coords of a tile to descover based on lowest f cost and after on lowest h cost
+                                                                       //maby possible to have h cost pointing to the robot??? maby
 
 int indexByCoords(std::vector<coords> vec, coords position);
 

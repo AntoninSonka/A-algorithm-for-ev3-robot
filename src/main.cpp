@@ -21,7 +21,7 @@
      *
      * Low priority
      *
-     * TODO Possibly swap arrays for priority queues
+     * TODO Possibly swap vectors for priority queues
  *
  *
  * Author: Antonín Šonka
